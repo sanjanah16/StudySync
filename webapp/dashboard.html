@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>StudySync Dashboard</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .logout {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .logout:hover {
+            background: rgba(255,255,255,0.35);
+        }
+
+        /* CONTAINER */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .welcome {
+            margin-bottom: 35px;
+        }
+
+        .welcome h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        .welcome p {
+            color: #777;
+            font-size: 16px;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border-top: 5px solid #667eea;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            color: #4c1d95;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #777;
+            line-height: 1.5;
+            min-height: 48px;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 18px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 10px 16px;
+            border-radius: 9px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(102,126,234,0.3);
+        }
+
+        /* DIFFERENT CARD COLORS */
+
+        .subjects {
+            border-top-color: #667eea;
+        }
+
+        .tasks {
+            border-top-color: #ff6b6b;
+        }
+
+        .sessions {
+            border-top-color: #20bf6b;
+        }
+
+        .progress {
+            border-top-color: #8854d0;
+        }
+
+        .plans {
+            border-top-color: #f7b731;
+        }
+
+        .notes {
+            border-top-color: #fa8231;
+        }
+
+        .goals {
+            border-top-color: #eb3b5a;
+        }
+
+        .notifications {
+            border-top-color: #3867d6;
+        }
+
+        .suggestions {
+            border-top-color: #00b894;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 18px 20px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome h1 {
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">
+            📚 StudySync
+        </div>
+
+        <a href="logout" class="logout">
+            Logout
+        </a>
+
+    </div>
+
+
+    <!-- MAIN CONTAINER -->
+
+    <div class="container">
+
+        <div class="welcome">
+
+            <h1>
+                Welcome to StudySync 🎓
+            </h1>
+
+            <p>
+                Manage your studies, tasks, goals and progress
+                in one place.
+            </p>
+
+        </div>
+
+
+        <!-- DASHBOARD CARDS -->
+
+        <div class="cards">
+
+
+            <!-- SUBJECTS -->
+
+            <div class="card subjects">
+
+                <h3>
+                    📚 Subjects
+                </h3>
+
+                <p>
+                    Manage your subjects and learning materials.
+                </p>
+
+                <a href="subjects">
+                    View Subjects →
+                </a>
+
+            </div>
+
+
+            <!-- TASKS -->
+
+            <div class="card tasks">
+
+                <h3>
+                    📝 Tasks
+                </h3>
+
+                <p>
+                    Organize your daily study tasks and deadlines.
+                </p>
+
+                <a href="tasks">
+                    View Tasks →
+                </a>
+
+            </div>
+
+
+            <!-- STUDY SESSIONS -->
+
+            <div class="card sessions">
+
+                <h3>
+                    ⏱ Study Sessions
+                </h3>
+
+                <p>
+                    Track your study sessions and learning time.
+                </p>
+
+                <a href="study-sessions">
+                    View Sessions →
+                </a>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="card progress">
+
+                <h3>
+                    📊 Progress
+                </h3>
+
+                <p>
+                    Monitor your subject-wise learning progress.
+                </p>
+
+                <a href="progress">
+                    View Progress →
+                </a>
+
+            </div>
+
+
+            <!-- STUDY PLANS -->
+
+            <div class="card plans">
+
+                <h3>
+                    📅 Study Plans
+                </h3>
+
+                <p>
+                    Create and manage your personalized study plans.
+                </p>
+
+                <a href="study-plans">
+                    View Plans →
+                </a>
+
+            </div>
+
+
+            <!-- NOTES -->
+
+            <div class="card notes">
+
+                <h3>
+                    📖 Notes
+                </h3>
+
+                <p>
+                    Create, edit and manage your study notes.
+                </p>
+
+                <a href="notes">
+                    View Notes →
+                </a>
+
+            </div>
+
+
+            <!-- GOALS -->
+
+            <div class="card goals">
+
+                <h3>
+                    🎯 Goals
+                </h3>
+
+                <p>
+                    Set learning goals and track your achievements.
+                </p>
+
+                <a href="goals">
+                    View Goals →
+                </a>
+
+            </div>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="card notifications">
+
+                <h3>
+                    🔔 Notifications
+                </h3>
+
+                <p>
+                    View reminders and important study updates.
+                </p>
+
+                <a href="notifications">
+                    View Notifications →
+                </a>
+
+            </div>
+
+
+            <!-- MENTOR SUGGESTIONS -->
+
+            <div class="card suggestions">
+
+                <h3>
+                    👨‍🏫 Mentor Suggestions
+                </h3>
+
+                <p>
+                    View guidance and feedback provided by your mentor.
+                </p>
+
+                <a href="suggestions">
+                    View Suggestions →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+

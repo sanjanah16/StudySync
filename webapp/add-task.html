@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>StudySync - Add Task</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(135deg,
+        #eef2ff,
+        #fdf2f8);
+
+}
+
+.navbar {
+
+    height: 75px;
+
+    background:
+        linear-gradient(135deg,
+        #667eea,
+        #764ba2);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 50px;
+
+    color: white;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.15);
+
+}
+
+.logo {
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+}
+
+.back {
+
+    text-decoration: none;
+
+    color: white;
+
+    background: rgba(255,255,255,0.2);
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+.back:hover {
+
+    background: white;
+
+    color: #764ba2;
+
+}
+
+.container {
+
+    width: 90%;
+
+    max-width: 700px;
+
+    margin: 45px auto;
+
+}
+
+.form-card {
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.10);
+
+}
+
+.form-card h1 {
+
+    color: #667eea;
+
+    margin-bottom: 10px;
+
+}
+
+.form-card .subtitle {
+
+    color: #777;
+
+    margin-bottom: 30px;
+
+}
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    color: #444;
+
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+
+    border-color: #667eea;
+
+    box-shadow:
+        0 0 0 3px rgba(102,126,234,0.12);
+
+}
+
+.form-group textarea {
+
+    height: 100px;
+
+    resize: vertical;
+
+}
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+.add-button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(135deg,
+        #667eea,
+        #764ba2);
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.add-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(102,126,234,0.3);
+
+}
+
+@media(max-width: 600px) {
+
+    .navbar {
+
+        padding: 0 20px;
+
+    }
+
+    .form-card {
+
+        padding: 25px;
+
+    }
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <div class="logo">
+        📚 StudySync
+    </div>
+
+    <a href="tasks" class="back">
+        ← My Tasks
+    </a>
+
+</div>
+
+
+<div class="container">
+
+    <div class="form-card">
+
+        <h1>➕ Add New Task</h1>
+
+        <p class="subtitle">
+            Create a study task and keep your learning organized.
+        </p>
+
+
+        <form action="tasks" method="post">
+
+
+            <div class="form-group">
+
+                <label>Task Title</label>
+
+                <input type="text"
+                       name="title"
+                       placeholder="Example: Complete Java OOP"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Description</label>
+
+                <textarea name="description"
+                          placeholder="Enter task description"
+                          required></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Subject</label>
+
+                <select name="subjectId" required>
+
+                    <option value="">
+                        Select Subject
+                    </option>
+
+                    <option value="1">
+                        Java
+                    </option>
+
+                    <option value="2">
+                        Database Management
+                    </option>
+
+                    <option value="3">
+                        Web Development
+                    </option>
+
+                    <option value="4">
+                        Data Structures
+                    </option>
+
+                    <option value="5">
+                        Spring Boot
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label>Due Date</label>
+
+                    <input type="date"
+                           name="dueDate"
+                           required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Priority</label>
+
+                    <select name="priority" required>
+
+                        <option value="LOW">
+                            Low
+                        </option>
+
+                        <option value="MEDIUM" selected>
+                            Medium
+                        </option>
+
+                        <option value="HIGH">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Status</label>
+
+                <select name="status" required>
+
+                    <option value="PENDING" selected>
+                        Pending
+                    </option>
+
+                    <option value="IN_PROGRESS">
+                        In Progress
+                    </option>
+
+                    <option value="COMPLETED">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button type="submit"
+                    class="add-button">
+
+                Add Task
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
