@@ -11,7 +11,7 @@ public class DBConnection {
 
     private static final String USER = "root";
 
-    private static final String PASSWORD = "Sanjana@1661";
+   private static final String PASSWORD = "YOUR_PASSWORD";
 
     public static Connection getConnection() {
 
