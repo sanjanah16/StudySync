@@ -1,4 +1,3 @@
-
 package com.studysync.util;
 
 import java.sql.Connection;
@@ -9,9 +8,11 @@ public class DBConnection {
     private static final String URL =
             "jdbc:mysql://localhost:3306/studysync";
 
-    private static final String USER = "root";
+    private static final String USER =
+            "root";
 
-   private static final String PASSWORD = "YOUR_PASSWORD";
+    private static final String PASSWORD =
+            "Sanjana@1661";
 
     public static Connection getConnection() {
 
